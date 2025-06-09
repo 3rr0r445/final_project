@@ -54,6 +54,7 @@ food = Item("Canned Goods", "A collection of all the non-perishable food in your
 
 # Bedroom items
 bed = Item("Your Bed", "A queen sized bed, neatly made with your favorite bedding set. While you long for rest, this is just not the time. Your Bug out Bag sits on the foot of the bed.", False)
+bag = Item("Bug Out Bag", "It's a collection of clothes and tools you gathered hurriedly from your room. A Bug Out Bag you hurriedly threw together when the news first hit.", True)
 
 
 
@@ -100,9 +101,9 @@ hallway1.exits = {
     "east": dining,
     "north": hallway2}
 dining.exits = {
-    "West": hallway1}
+    "west": hallway1}
 kitchen.exits = {
-    "East": hallway1}
+    "east": hallway1}
 hallway2.exits = {
     "east": bedroom,
     "west": bathroom,
