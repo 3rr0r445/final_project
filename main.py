@@ -88,6 +88,13 @@ while True:
         print("Thanks for playing!")
         break
 
+
+    #Define Inventory command
+    if verb in ["inv", "inventory"]:
+        print("You have the following: ")
+        for item in player.inventory:
+            print(item.name)
+        
     # Define Examine Command
     elif verb == "examine" and noun:
         if noun == "room":
