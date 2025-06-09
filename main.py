@@ -84,7 +84,7 @@ bedroom.items.append(bed)
 bedroom.items.append(bag)
 # Bathroom
 bathroom = Room("The Bathroom", "It's a little dingy but completely functional. The water never got cut off even though the power is gone. A filled canteen sits on the sink.")
-bathroom.items.append("canteen")
+bathroom.items.append(canteen)
 # Garage
 garage = Room("The Garage", "This is it. Your car stands ready and you're ready to go. You take one last check of everything you gathered.")
 
@@ -255,12 +255,18 @@ while True:
     else:
             print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
-    if player.location.name == "garage":
-        collected_items = len(player.inventory) # Adds up all found items
-        if collected_items >= 4:
-            print("You step into the garage, breathing heavily as you try and work yourself up.")
-            if "flashlight" in [item.name for item in  player.inventory]:
-                print("The flashlight you rememebered illuminates the dark room, showing your car ready for you to leave.")
-                
+    if player.location.name == "Garage":
+    collected_items = len(player.inventory)  # Count collected items
 
+        if collected_items >= 4 and "keys" in [item.name.lower() for item in player.inventory]:
+            print("\nYou step into the garage, breathing heavily as you prepare to leave.")
+        
+            if "flashlight" in [item.name.lower() for item in player.inventory]:
+                print("Your flashlight illuminates the dark room, revealing your car ready for escape.")
+
+            print("\nWith the keys in hand, you start the engine and drive away.")
+            print("You've survived... for now.")
+        else:
+            print("\nYou reach the garage, but panic sets in.")
+            print("Without enough supplies—or worse, without your keys—you have no way to escape.")
 
