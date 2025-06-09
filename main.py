@@ -136,6 +136,7 @@ while True:
         if verb in player.location.exits:
             player.location = player.location.exits[verb]
             print(f"You go {verb} and find yourself {player.location.name}.")
+            show_location()
         else:
             print("You cannot go that way!")
 
