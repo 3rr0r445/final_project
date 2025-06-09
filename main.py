@@ -24,6 +24,20 @@ class Item:
         self.description = description
         self.is_movable = is_movable
 
+
+# Define Show Location Function, prompting whenever the player enters a new room.
+def show_location:
+    print(f"\n{player.location.name}")
+    print(player.location.description)
+    print("\nYou See The Following:")
+    for item in player.location.items:
+        print(item.name)
+    else:
+        print("There is nothing of value here.")
+    print("\nExits:")
+    for exit in player.location.exits:
+        print(exit)
+        
 # Define game items here
 #Living Room Items
 flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included.", True)
@@ -100,6 +114,8 @@ print(player.location.description)
 print("\nYou See The Following:")
 for item in player.location.items:
     print(item.name)
+else:
+    print("There is nothing of value here.")
 print("\nExits:")
 for exit in player.location.exits:
     print(exit)
