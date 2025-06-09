@@ -42,6 +42,10 @@ def show_location():
 flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included.", True)
 phone = Item("Phone", "A black rotary phone. There is no dial tone. No help is coming.", False)
 
+# Dining Room Items
+machete = Item("Machete", "A Sharp Machete. You bought it from the superstore but haven't really left your house to use it. It's well oiled and oddly sharp.", True)
+
+
 # Hallway 1 and 2 items
 pictures = Item("Pictures", "Pictures of yourself along with your family and friends", True)
 bowl = Item("A Bowl", "A fruit bowl sitting on a small counter in the hallway. It holds random things like change and car keys.", False)
@@ -92,7 +96,7 @@ kitchen.items.append(food)
 
 # Dining Room
 dining = Room("The Dining Room", "The dining room only contains a small table for eating and a singular chair. You spend a lot of time alone, sadly. Your computer desk and setup sit in the corner but are without power same as the rest of the house.")
-
+dining.items.append(machete)
 
 
 
@@ -250,4 +254,4 @@ while True:
 
     if player.location.name == "garage":
         collected_items = len(player.inventory) # Adds up all found items
-        
+
