@@ -264,8 +264,8 @@ while True:
             if "flashlight" in [item.name.lower() for item in player.inventory]:
                 print("Your flashlight illuminates the dark room, revealing your car ready for escape.")
 
-            print("\nWith the keys in hand, you start the engine and drive away.")
-            print("You've survived... for now.")
+                print("\nWith the keys in hand, you start the engine and drive away.")
+                print("You've survived... for now.")
         else:
             print("\nYou reach the garage, but panic sets in.")
             print("Without enough supplies—or worse, without your keys—you have no way to escape.")
