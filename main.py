@@ -133,7 +133,7 @@ while True:
 
     # Define Movement
     if verb in ["n", "s", "e", "w"]:
-        player.location = player.location.exits[verb]
+        player.location = player.location.exits(verb)
         print("You go {} and find yourself in a new room.".format(verb))
         
     # Define Examine Command
