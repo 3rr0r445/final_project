@@ -205,7 +205,7 @@ while True:
     if verb in ["north", "south", "east", "west"]:
         if verb in player.location.exits:
             player.location = player.location.exits[verb]
-            print(f"You go {verb} and find yourself {player.location.name}.")
+            print(f"You go {verb} and find yourself in {player.location.name}.")
             show_location()
         else:
             print("You cannot go that way!")
@@ -255,7 +255,7 @@ while True:
     else:
             print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
-    if player.location.name == "Garage":
+        if player.location.name == "Garage":
         collected_items = len(player.inventory)  # Count collected items
 
         if collected_items >= 4 and "keys" in [item.name.lower() for item in player.inventory]:
