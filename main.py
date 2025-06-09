@@ -64,6 +64,9 @@ def intro():
 #intro()
 print(f"\n{player.location.name}")
 print(player.location.description)
+print("\nYou See The Following:")
+for item in player.location.items:
+    print(item.name)
 print("\nExits:")
 for exit in player.location.exits:
     print(exit)
@@ -102,7 +105,7 @@ while True:
             print(player.location.description)
             print("\nYou see the following:")
             for item in player.location.items:
-                print(item.names)
+                print(item.name)
         else:
             found_item = next((item for item in player.location.items if item.name.lower() == noun.lower()), None)
             if found_item:
