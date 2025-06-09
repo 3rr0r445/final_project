@@ -70,8 +70,8 @@ for exit in player.location.exits:
 
 
 while True:
-    command = input("> ").strip().lower
-    words = command.split
+    command = input("> ").strip().lower()
+    words = command.split()
 
     if len(words) == 0:
         continue
