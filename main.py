@@ -99,7 +99,8 @@ living_room.exits = {
 hallway1.exits = {
     "south": living_room,
     "east": dining,
-    "north": hallway2}
+    "north": hallway2,
+    "west": kitchen}
 dining.exits = {
     "west": hallway1}
 kitchen.exits = {
