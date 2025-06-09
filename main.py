@@ -27,7 +27,7 @@ class Item:
 # Define game items here
 #Living Room Items
 flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included.", True)
-phone = Item("Phone", "A black rotary phone. There is no dial tone. Luckily, you called for help earlier.", False)
+phone = Item("Phone", "A black rotary phone. There is no dial tone. No help is coming.", False)
 
 # Hallway 1 and 2 items
 
