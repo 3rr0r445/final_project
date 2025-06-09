@@ -81,15 +81,15 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 
 # Create room exits.
-living_room.exits{
+living_room.exits = {
     "north": hallway1}
 hallway1.exits = {
     "south": living_room,
     "east": dining,
     "north": hallway2}
-dining.exits{
+dining.exits = {
     "West": hallway1}
-kitchen.exits{
+kitchen.exits = {
     "East": hallway1}
 
 
