@@ -143,6 +143,7 @@ while True:
     words = command.split()
 
     if len(words) == 0:
+        show_location()
         continue
 
     verb = words[0]
@@ -217,7 +218,7 @@ while True:
         print("\nYou can see the following exits:")
         for direction in player.location.exits:
             print(f"- {direction} leads to {player.location.exits[direction].name}")
-        else:
+    else:
             print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
 
