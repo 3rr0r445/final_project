@@ -26,7 +26,7 @@ class Item:
 
 
 # Define Show Location Function, prompting whenever the player enters a new room.
-def show_location()
+def show_location():
     print(f"\n{player.location.name}")
     print(player.location.description)
     print("\nYou See The Following:")
