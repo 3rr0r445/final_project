@@ -128,6 +128,12 @@ while True:
             print(f"There is no {noun} here.")
         continue
 
+    # Define The Drop Command
+    elif verb == "drop":
+        for item in player.inventory:
+            print("You drop the {}.".format(item.name))
+            player.inventory.remove(item)
+            player.location.items.append(item)
     else:
         print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
