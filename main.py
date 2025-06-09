@@ -255,17 +255,17 @@ while True:
     else:
             print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
-        if player.location.name == "Garage":
+    if player.location.name == "Garage":
         collected_items = len(player.inventory)  # Count collected items
 
-        if collected_items >= 4 and "keys" in [item.name.lower() for item in player.inventory]:
+    if collected_items >= 4 and "keys" in [item.name.lower() for item in player.inventory]:
             print("\nYou step into the garage, breathing heavily as you prepare to leave.")
         
-            if "flashlight" in [item.name.lower() for item in player.inventory]:
-                print("Your flashlight illuminates the dark room, revealing your car ready for escape.")
+        if "flashlight" in [item.name.lower() for item in player.inventory]:
+            print("Your flashlight illuminates the dark room, revealing your car ready for escape.")
 
-                print("\nWith the keys in hand, you start the engine and drive away.")
-                print("You've survived... for now.")
+            print("\nWith the keys in hand, you start the engine and drive away.")
+            print("You've survived... for now.")
         else:
             print("\nYou reach the garage, but panic sets in.")
             print("Without enough supplies—or worse, without your keys—you have no way to escape.")
