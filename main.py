@@ -46,6 +46,11 @@ phone = Item("Phone", "A black rotary phone. There is no dial tone. No help is c
 # Hallway 1 and 2 items
 pictures = Item("Pictures", "Pictures of yourself along with your family and friends", True)
 
+# Kitchen items
+fridge = Item("Fridge", "A large, ancient fridge. It's gone warm since the power went out. You're afraid to open it.", False)
+food = Item("Canned Goods", "A collection of all the non-perishable food in your kitchem, which isn't much. It's tucked into a crumbled superstore plastic bag.", True)
+
+
 
 
 # Define Rooms here and place items in it
@@ -66,6 +71,8 @@ hallway2 = Room("The End of The Hallway", "The hallway ends with the large exter
 
 # Kitchen
 kitchen = Room("The Kitchen", "The kitchen is sparse, but it has everything you've needed up until the apocalypse. Some dishes lie unwashed in the sink. Probably not much reason to wash them now.")
+kitchen.items.append(fridge)
+kitchen.items.append(food)
 
 # Dining Room
 dining = Room("The Dining Room", "The dining room only contains a small table for eating and a singular chair. You spend a lot of time alone, sadly. Your computer desk and setup sit in the corner but are without power same as the rest of the house.")
@@ -74,13 +81,17 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 
 # Create room exits.
-living_room.exits["north"] = hallway1
+living_room.exits{
+    "north": hallway1}
 hallway1.exits = {
     "south": living_room,
     "east": dining,
     "north": hallway2}
-dining.exits["west"] = hallway1
-kitchen.exits["east"] = hallway1
+dining.exits{
+    "West": hallway1}
+kitchen.exits{
+    "East": hallway1}
+
 
 
 
