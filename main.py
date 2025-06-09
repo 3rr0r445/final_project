@@ -53,12 +53,12 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 
 # Create room exits.
-living_room.exits["n"] = hallway1
-hallway1.exits["s"] = living_room
-hallway1.exits["w"] = kitchen
-hallway1.exits["e"] = dining
-dining.exits["w"] = hallway1
-kitchen.exits["e"] = hallway1
+living_room.exits["north", "n"] = hallway1
+hallway1.exits["south", "s"] = living_room
+hallway1.exits["west", "w"] = kitchen
+hallway1.exits["east", "e"] = dining
+dining.exits["west", "w"] = hallway1
+kitchen.exits["east", "e"] = hallway1
 
 
 
