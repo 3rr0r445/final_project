@@ -56,7 +56,8 @@ food = Item("Canned Goods", "A collection of all the non-perishable food in your
 bed = Item("Your Bed", "A queen sized bed, neatly made with your favorite bedding set. While you long for rest, this is just not the time. Your Bug out Bag sits on the foot of the bed.", False)
 bag = Item("Bug Out Bag", "It's a collection of clothes and tools you gathered hurriedly from your room. A Bug Out Bag you hurriedly threw together when the news first hit.", True)
 
-
+# Bathroom Items
+canteen = Item("Canteen", "A Canteen filled with cold water from the sink. You will need this wherever you go.", True)
 
 # Define Rooms here and place items in it
 
@@ -72,13 +73,15 @@ hallway1 = Room(
 hallway1.items.append(pictures)
 # Hallway 2
 hallway2 = Room("The End of The Hallway", "The hallway ends with the large exterior door to your garage. To the east is your bedroom, to the west is the bathroom.")
-
+hallway2.items.append(keys)
 # Bedroom
 bedroom = Room("Your Bedroom", "The bed is made but your dressers and closer have been dug through. Everything worth taking is in your bug out bag laying on the bed.")
-
+bedroom.items.append(bed)
+bedroom.items.append(bag)
 # Bathroom
 bathroom = Room("The Bathroom", "It's a little dingy but completely functional. The water never got cut off even though the power is gone. A filled canteen sits on the sink.")
-
+bathroom.items.append("canteen")
+# Garage
 garage = Room("The Garage", "This is it. Your car stands ready and you're ready to go. You take one last check of everything you gathered.")
 
 
@@ -245,6 +248,6 @@ while True:
     else:
             print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
-
-
-
+    if player.location.name == "garage":
+        collected_items = len(player.inventory) # Adds up all found items
+        
