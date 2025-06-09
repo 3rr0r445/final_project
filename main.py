@@ -44,6 +44,7 @@ flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included
 phone = Item("Phone", "A black rotary phone. There is no dial tone. No help is coming.", False)
 
 # Hallway 1 and 2 items
+pictures = Item("Pictures", "Pictures of yourself along with your family and friends", True)
 
 
 
@@ -54,8 +55,14 @@ living_room = Room("The Living Room", "It's been the same since you were a child
 living_room.items.append(flashlight)
 living_room.items.append(phone)
 
-# Hallway
-hallway1 = Room("A Long Hallway", "The central hallway of your home. To your west is the kitchen and to your east is your dining room. North continues deeper into the house.")
+# Hallway 1
+hallway1 = Room(
+    "A Long Hallway",
+    f"The central hallway of your home. {pictures.description} line the walls. To your west is the kitchen and to your east is your dining room. North continues deeper into the house.")
+hallway1.items.append(pictures)
+# Hallway 2
+hallway2 = Room("The End of The Hallway", "The hallway ends with the large exterior door to your garage. To the east is your bedroom, to the west is the bathroom.")
+
 
 # Kitchen
 kitchen = Room("The Kitchen", "The kitchen is sparse, but it has everything you've needed up until the apocalypse. Some dishes lie unwashed in the sink. Probably not much reason to wash them now.")
@@ -68,9 +75,10 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 # Create room exits.
 living_room.exits["north"] = hallway1
-hallway1.exits["south"] = living_room
-hallway1.exits["west"] = kitchen
-hallway1.exits["east"] = dining
+hallway1.exits = {
+    "south": living_room,
+    "east": dining,
+    "north": hallway2}
 dining.exits["west"] = hallway1
 kitchen.exits["east"] = hallway1
 
