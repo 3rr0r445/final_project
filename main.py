@@ -110,6 +110,9 @@ hallway2.exits = {
     "west": bathroom,
     "north": garage
 }
+bathroom.exits = {
+    "east": hallway2
+}
 
 
 
