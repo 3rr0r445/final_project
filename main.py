@@ -32,8 +32,6 @@ def show_location():
     print("\nYou See The Following:")
     for item in player.location.items:
         print(item.name)
-    else:
-        print("There is nothing of value here.")
     print("\nExits:")
     for exit in player.location.exits:
         print(exit)
@@ -165,6 +163,12 @@ while True:
         print("You have the following: ")
         for item in player.inventory:
             print(item.name)
+
+    # Define Exits Command
+    if verb.lower() == "exits":
+    print("\nYou can see the following exits:")
+    for direction in player.location.exits:
+        print(f"- {direction} leads to {player.location.exits[direction].name}")
 
     # Define Movement
     if verb in ["north", "south", "east", "west"]:
