@@ -256,7 +256,7 @@ while True:
             print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
     if player.location.name == "Garage":
-    collected_items = len(player.inventory)  # Count collected items
+        collected_items = len(player.inventory)  # Count collected items
 
         if collected_items >= 4 and "keys" in [item.name.lower() for item in player.inventory]:
             print("\nYou step into the garage, breathing heavily as you prepare to leave.")
