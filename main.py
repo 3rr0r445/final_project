@@ -34,13 +34,31 @@ phone = Item("Phone", "A black rotary phone. There is no dial tone. Luckily, you
 
 
 # Define Rooms here and place items in it
+
 # Living Room
 living_room = Room("The Living Room", "It's been the same since you were a child. Calming except for the lack of electricity." )
 living_room.items.append(flashlight)
 living_room.items.append(phone)
 
 # Hallway
-hallway = Room("A Long Hallway", "The central hallway of your home. To your west is the kitchen and to your east is your dining room. North continues deeper into the house.")
+hallway1 = Room("A Long Hallway", "The central hallway of your home. To your west is the kitchen and to your east is your dining room. North continues deeper into the house.")
+
+# Kitchen
+kitchen = Room("The Kitchen", "The kitchen is sparse, but it has everything you've needed up until the apocalypse. Some dishes lie unwashed in the sink. Probably not much reason to wash them now.")
+
+# Dining Room
+dining = Room("The Dining Room", "The dining room only contains a small table for eating and a singular chair. You spend a lot of time alone, sadly. Your computer desk and setup sit in the corner but are without power same as the rest of the house.")
+
+
+
+
+# Create room exits.
+living_room.exits["N"] = hallway1
+hallway1.exits["S"] = living_room
+hallway1.exits["W"] = kitchen
+hallway1.exits["E"] = dining
+dining.exits["W"] = hallway1
+kitchen.exits["E"] = hallway1
 
 
 
@@ -67,7 +85,9 @@ def intro():
     time.sleep(1)
     print("What you can vaguely hear from outside is the sound of shambling footsteps and moaning.")
     time.sleep(1)
-    print("Escape is probably a pipedream at this point. You must collect resources in this house and get to the basement to await rescue.")
+    print("You have to collect supplies and move to the garage at the far end of the house.")
+    time.sleep(1)
+    print("It's up to you to escape this nightmare. No help is coming.")
     time.sleep(1)
     print()
 
