@@ -53,12 +53,12 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 
 # Create room exits.
-living_room.exits["N"] = hallway1
-hallway1.exits["S"] = living_room
-hallway1.exits["W"] = kitchen
-hallway1.exits["E"] = dining
-dining.exits["W"] = hallway1
-kitchen.exits["E"] = hallway1
+living_room.exits["n"] = hallway1
+hallway1.exits["s"] = living_room
+hallway1.exits["w"] = kitchen
+hallway1.exits["e"] = dining
+dining.exits["w"] = hallway1
+kitchen.exits["e"] = hallway1
 
 
 
@@ -138,7 +138,7 @@ while True:
             print(f"You go {verb} and find yourself {player.location.name}.")
         else:
             print("You cannot go that way!")
-            
+
     # Define Examine Command
     elif verb == "examine" and noun:
         if noun == "room":
