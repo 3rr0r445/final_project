@@ -133,9 +133,12 @@ while True:
 
     # Define Movement
     if verb in ["n", "s", "e", "w"]:
-        player.location = player.location.exits(verb)
-        print("You go {} and find yourself in a new room.".format(verb))
-        
+        if verb in player.location.exits:
+            player.location = player.location.exits[verb]
+            print(f"You go {verb} and find yourself {player.location.name}.")
+        else:
+            print("You cannot go that way!")
+            
     # Define Examine Command
     elif verb == "examine" and noun:
         if noun == "room":
