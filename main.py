@@ -66,6 +66,13 @@ hallway1.items.append(pictures)
 # Hallway 2
 hallway2 = Room("The End of The Hallway", "The hallway ends with the large exterior door to your garage. To the east is your bedroom, to the west is the bathroom.")
 
+# Bedroom
+bedroom = Room("Your Bedroom", "The bed is made but your dressers and closer have been dug through. Everything worth taking is in your bug out bag laying on the bed.")
+
+# Bathroom
+bathroom = Room("The Bathroom", "It's a little dingy but completely functional. The water never got cut off even though the power is gone. A filled canteen sits on the sink.")
+
+
 
 # Kitchen
 kitchen = Room("The Kitchen", "The kitchen is sparse, but it has everything you've needed up until the apocalypse. Some dishes lie unwashed in the sink. Probably not much reason to wash them now.")
