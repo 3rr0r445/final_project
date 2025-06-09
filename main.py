@@ -164,11 +164,7 @@ while True:
         for item in player.inventory:
             print(item.name)
 
-    # Define Exits Command
-    if verb.lower() == "exits":
-    print("\nYou can see the following exits:")
-    for direction in player.location.exits:
-        print(f"- {direction} leads to {player.location.exits[direction].name}")
+
 
     # Define Movement
     if verb in ["north", "south", "east", "west"]:
@@ -215,8 +211,14 @@ while True:
             print("You drop the {}.".format(item.name))
             player.inventory.remove(item)
             player.location.items.append(item)
-    else:
-        print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
+
+    # Define Exits Command
+    elif verb.lower() == "exits":
+        print("\nYou can see the following exits:")
+        for direction in player.location.exits:
+            print(f"- {direction} leads to {player.location.exits[direction].name}")
+        else:
+            print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
 
 
 
