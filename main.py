@@ -120,6 +120,9 @@ hallway2.exits = {
 bathroom.exits = {
     "east": hallway2
 }
+bedroom.exits = {
+    "west": hallway2
+}
 
 
 
@@ -254,7 +257,7 @@ while True:
 
     if player.location.name == "garage":
         collected_items = len(player.inventory) # Adds up all found items
-        if collected_items => 4:
+        if collected_items >= 4:
             print("You step into the garage, breathing heavily as you try and work yourself up.")
             if "flashlight" in [item.name for item in  player.inventory]:
                 print("The flashlight you rememebered illuminates the dark room, showing your car ready for you to leave.")
