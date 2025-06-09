@@ -43,6 +43,9 @@ phone = Item("Phone", "A black rotary phone. There is no dial tone. No help is c
 
 # Hallway 1 and 2 items
 pictures = Item("Pictures", "Pictures of yourself along with your family and friends", True)
+bowl = Item("A Bowl", "A fruit bowl sitting on a small counter in the hallway. It holds random things like change and car keys.", False)
+keys = Item("Keys", "The keys to the car in your garage. You're going to certainly need these.", True)
+
 
 # Kitchen items
 fridge = Item("Fridge", "A large, ancient fridge. It's gone warm since the power went out. You're afraid to open it.", False)
@@ -60,7 +63,7 @@ living_room.items.append(phone)
 
 # Hallway 1
 hallway1 = Room(
-    "A Long Hallway",
+    "A Long Hallway", # Totally just wanted to see if you could fstring when creating a class item
     f"The central hallway of your home. {pictures.description} line the walls. To your west is the kitchen and to your east is your dining room. North continues deeper into the house.")
 hallway1.items.append(pictures)
 # Hallway 2
@@ -72,7 +75,7 @@ bedroom = Room("Your Bedroom", "The bed is made but your dressers and closer hav
 # Bathroom
 bathroom = Room("The Bathroom", "It's a little dingy but completely functional. The water never got cut off even though the power is gone. A filled canteen sits on the sink.")
 
-
+garage = 
 
 # Kitchen
 kitchen = Room("The Kitchen", "The kitchen is sparse, but it has everything you've needed up until the apocalypse. Some dishes lie unwashed in the sink. Probably not much reason to wash them now.")
@@ -85,7 +88,7 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 
 
-# Create room exits.
+# Create room exits. Set them up in dictionaries rather than lists.
 living_room.exits = {
     "north": hallway1}
 hallway1.exits = {
@@ -96,6 +99,11 @@ dining.exits = {
     "West": hallway1}
 kitchen.exits = {
     "East": hallway1}
+hallway2.exits = {
+    "east": bedroom,
+    "west": bathroom,
+    "north": garage
+}
 
 
 
