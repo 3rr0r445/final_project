@@ -25,7 +25,7 @@ class Item:
         self.is_movable = is_movable
 
 # Define game items here
-flashlight = Item('A Flashlight', "It's a brand new flashlight, batteries included.", True)
+flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included.", True)
 
 # Define Rooms here and place items in it
 living_room = Room("The Living Room", "It's been the same since you were a child. Calming except for the lack of electricity.", )
