@@ -53,12 +53,12 @@ dining = Room("The Dining Room", "The dining room only contains a small table fo
 
 
 # Create room exits.
-living_room.exits["north", "n"] = hallway1
-hallway1.exits["south", "s"] = living_room
-hallway1.exits["west", "w"] = kitchen
-hallway1.exits["east", "e"] = dining
-dining.exits["west", "w"] = hallway1
-kitchen.exits["east", "e"] = hallway1
+living_room.exits["north"] = hallway1
+hallway1.exits["south"] = living_room
+hallway1.exits["west"] = kitchen
+hallway1.exits["east"] = dining
+dining.exits["west"] = hallway1
+kitchen.exits["east"] = hallway1
 
 
 
@@ -132,7 +132,7 @@ while True:
             print(item.name)
 
     # Define Movement
-    if verb in ["n", "s", "e", "w"]:
+    if verb in ["north", "south", "east", "west"]:
         if verb in player.location.exits:
             player.location = player.location.exits[verb]
             print(f"You go {verb} and find yourself {player.location.name}.")
