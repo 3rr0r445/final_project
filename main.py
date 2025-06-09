@@ -37,6 +37,7 @@ def show_location():
         print(exit)
 
 # Define game items here
+
 #Living Room Items
 flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included.", True)
 phone = Item("Phone", "A black rotary phone. There is no dial tone. No help is coming.", False)
@@ -51,6 +52,8 @@ keys = Item("Keys", "The keys to the car in your garage. You're going to certain
 fridge = Item("Fridge", "A large, ancient fridge. It's gone warm since the power went out. You're afraid to open it.", False)
 food = Item("Canned Goods", "A collection of all the non-perishable food in your kitchem, which isn't much. It's tucked into a crumbled superstore plastic bag.", True)
 
+# Bedroom items
+bed = Item("Your Bed", "A queen sized bed, neatly made with your favorite bedding set. While you long for rest, this is just not the time. Your Bug out Bag sits on the foot of the bed.", False)
 
 
 
@@ -75,7 +78,8 @@ bedroom = Room("Your Bedroom", "The bed is made but your dressers and closer hav
 # Bathroom
 bathroom = Room("The Bathroom", "It's a little dingy but completely functional. The water never got cut off even though the power is gone. A filled canteen sits on the sink.")
 
-garage = 
+garage = Room("The Garage", "This is it. Your car stands ready and you're ready to go. You take one last check of everything you gathered.")
+
 
 # Kitchen
 kitchen = Room("The Kitchen", "The kitchen is sparse, but it has everything you've needed up until the apocalypse. Some dishes lie unwashed in the sink. Probably not much reason to wash them now.")
