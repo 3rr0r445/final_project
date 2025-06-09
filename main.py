@@ -69,4 +69,51 @@ for exit in player.location.exits:
     print(exit)
 
 
+while True:
+    command = input("> ").strip().lower
+    words = command.split
+
+    if len(words) == 0:
+        continue
+
+    verb = words[0]
+    if len(words) > 1:
+        noun = " ".join(words[1:])
+    else:
+        noun = None
+
+
+    # Define Quit Command
+    if verb == "quit":
+        print("Thanks for playing!")
+        break
+
+    # Define Examine Command
+    elif verb == "examine" and noun:
+        found_item = next((item for item in player.location.items if item.name.lower() == noun.lower()), None)
+        if found_item:
+            print(found_item.description)
+        else:
+            print(f"There is no {noun} here.")
+
+        continue
+
+    # Define The Get Command
+    elif verb == "get" and noun:
+        found_item = next((item for item in player.location.items if item.name.lower() == noun.lower()), None)
+        if found_item and found_item.is_movable:
+            player.inventory.append(found_item)
+            player.location.items.remove(found_item)
+            print(f"You take the {noun}!")
+        elif found_item and not found_item.is_movable:
+            print("You simply can't take that.")
+        else:
+            print(f"There is no {noun} here.")
+        continue
+
+    else:
+        print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
+
+
+
 
