@@ -25,11 +25,24 @@ class Item:
         self.is_movable = is_movable
 
 # Define game items here
+#Living Room Items
 flashlight = Item('Flashlight', "It's a brand new flashlight, batteries included.", True)
+phone = Item("Phone", "A black rotary phone. There is no dial tone. Luckily, you called for help earlier.", False)
+
+# Hallway 1 and 2 items
+
+
 
 # Define Rooms here and place items in it
-living_room = Room("The Living Room", "It's been the same since you were a child. Calming except for the lack of electricity.", )
+# Living Room
+living_room = Room("The Living Room", "It's been the same since you were a child. Calming except for the lack of electricity." )
 living_room.items.append(flashlight)
+living_room.items.append(phone)
+
+# Hallway
+hallway = Room("A Long Hallway", "The central hallway of your home. To your west is the kitchen and to your east is your dining room. North continues deeper into the house.")
+
+
 
 # Create the player and assign starting point
 player = Player("The Player", living_room)
