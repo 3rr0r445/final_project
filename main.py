@@ -90,11 +90,18 @@ while True:
 
     # Define Examine Command
     elif verb == "examine" and noun:
-        found_item = next((item for item in player.location.items if item.name.lower() == noun.lower()), None)
-        if found_item:
-            print(found_item.description)
+        if noun == "room":
+            print(f"\n{player.location.name}")
+            print(player.location.description)
+            print("\nYou see the following:")
+            for item in player.location.items:
+                print(item.names)
         else:
-            print(f"There is no {noun} here.")
+            found_item = next((item for item in player.location.items if item.name.lower() == noun.lower()), None)
+            if found_item:
+                print(found_item.description)
+            else:
+                print(f"There is no {noun} here.")
 
         continue
 
