@@ -269,4 +269,3 @@ while True:
         else:
             print("\nYou reach the garage, but panic sets in.")
             print("Without enough supplies—or worse, without your keys—you have no way to escape.")
-
