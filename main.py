@@ -164,7 +164,7 @@ def intro():
 
 # Start the Initial Game Loop
 
-#intro()
+intro()
 print(f"\n{player.location.name}")
 print(player.location.description)
 print("\nYou See The Following:")
