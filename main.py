@@ -1,4 +1,4 @@
-
+import time
 # Define a class to describe rooms. Set parameters to include name, description, exits, and items. 
 # Set room exits and visable items to an empty dictionary and list.
 class Room:
@@ -123,6 +123,9 @@ bathroom.exits = {
 bedroom.exits = {
     "west": hallway2
 }
+garage.exits = {
+    "south": hallway2
+}
 
 
 
@@ -163,8 +166,9 @@ def intro():
 print(f"\n{player.location.name}")
 print(player.location.description)
 print("\nYou See The Following:")
-for item in player.location.items:
-    print(item.name)
+if player.location.items:  # ✅ Checks if there are any items
+    for item in player.location.items:
+        print(item.name)
 else:
     print("There is nothing of value here.")
 print("\nExits:")
@@ -240,32 +244,57 @@ while True:
             print(f"There is no {noun} here.")
         continue
 
-    # Define The Drop Command
-    elif verb == "drop":
-        for item in player.inventory:
-            print("You drop the {}.".format(item.name))
-            player.inventory.remove(item)
-            player.location.items.append(item)
-
     # Define Exits Command
     elif verb.lower() == "exits":
         print("\nYou can see the following exits:")
         for direction in player.location.exits:
             print(f"- {direction} leads to {player.location.exits[direction].name}")
     else:
-            print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'.")
+            print(f"{command} is not a valid command. Use 'Move', 'Examine', or 'Quit'. Just hit enter to refresh the room.")
 
-    if player.location.name == "garage":
+    if player.location.name == "The Garage":
         collected_items = len(player.inventory)  # Count collected items
-
-        if collected_items >= 4 and "keys" in [item.name.lower() for item in player.inventory]:
+    # Flashlight Effect (Optional)
+        if "Flashlight" in [item.name for item in player.inventory]:
+            print("\nYour flashlight illuminates the dark room, revealing your car ready for escape.")
+    # Main Escape Condition (Keys are required)
+        if collected_items >= 4 and "Keys" in [item.name for item in player.inventory]:
+            time.sleep(1)
             print("\nYou step into the garage, breathing heavily as you prepare to leave.")
-        
-        if "flashlight" in [item.name.lower() for item in player.inventory]:
-            print("Your flashlight illuminates the dark room, revealing your car ready for escape.")
+            time.sleep(1)
+            print("With the keys in hand, you unlock and climb into your car.")
+            time.sleep(1)
+            print("\nYou take a deep breath, gripping the steering wheel.")
+            time.sleep(1)
+            print("The engine roars to life, drowning out the eerie silence.")
+            time.sleep(1)
+            print("With one last glance at the house, you speed off into the unknown.")
+            time.sleep(1)
+            print("\n🏆 You survived... for now. GAME OVER.")
+            exit  # ✅ Ends the game completely
+    
 
-            print("\nWith the keys in hand, you start the engine and drive away.")
-            print("You've survived... for now.")
-        else:
-            print("\nYou reach the garage, but panic sets in.")
-            print("Without enough supplies—or worse, without your keys—you have no way to escape.")
+
+    # Bad Outcome (Items)
+        if collected_items < 4  in [item.name for item in player.inventory]:
+            print("\nYou step into the garage, but dread settles in.")
+            time.sleep(2)
+            print("Your supplies are lacking. There's no way you can make it.")
+            time.sleep(1)
+            print("You need more supplies before you can escape!")
+            time.sleep(1)
+            print("Go back and search the house again.")
+
+        if "Keys" not in [item.name for item in player.inventory]:
+            print("You slip into the garage and look over your supplies quickly...")
+            time.sleep(2)
+            print("You search all of your pockets and realise sadly that you don't have your keys.")
+            time.sleep(1)
+            print("Even if your supplies are good, you aren't going anywhere.")
+            time.sleep(1)
+            print("You're going to have to go back into the house and search for them.")
+
+
+
+
+
