@@ -78,6 +78,7 @@ hallway1.items.append(pictures)
 # Hallway 2
 hallway2 = Room("The End of The Hallway", "The hallway ends with the large exterior door to your garage. To the east is your bedroom, to the west is the bathroom.")
 hallway2.items.append(keys)
+hallway2.items.append(bowl)
 # Bedroom
 bedroom = Room("Your Bedroom", "The bed is made but your dressers and closer have been dug through. Everything worth taking is in your bug out bag laying on the bed.")
 bedroom.items.append(bed)
@@ -115,7 +116,8 @@ kitchen.exits = {
 hallway2.exits = {
     "east": bedroom,
     "west": bathroom,
-    "north": garage
+    "north": garage,
+    "south": hallway1
 }
 bathroom.exits = {
     "east": hallway2
